@@ -203,7 +203,7 @@ public:
       } else if (configs.has_l3_cache()) {
         first_level = Cache::Level::L3;
       } else {
-        last_level = Cache::Level::MAX; // no cache
+        first_level = Cache::Level::MAX; // no cache
       }
 
       if (configs.has_l3_cache()) {
