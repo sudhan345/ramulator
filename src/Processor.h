@@ -13,7 +13,7 @@
 #include <ctype.h>
 #include <functional>
 
-namespace ramulator 
+namespace ramulator
 {
 
 class Trace {
@@ -28,6 +28,12 @@ public:
     bool get_dramtrace_request(long& req_addr, Request::Type& req_type);
 
 private:
+
+    // Used for recording write addresses of filtered requests
+    bool has_write = false;
+    long write_addr = 0;
+    int line_num = 0;
+
     std::ifstream file;
     std::string trace_name;
 };

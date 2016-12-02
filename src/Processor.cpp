@@ -363,9 +363,6 @@ bool Trace::get_unfiltered_request(long& bubble_cnt, long& req_addr, Request::Ty
 
 bool Trace::get_filtered_request(long& bubble_cnt, long& req_addr, Request::Type& req_type)
 {
-    static bool has_write = false;
-    static long write_addr;
-    static int line_num = 0;
     if (has_write){
         bubble_cnt = 0;
         req_addr = write_addr;
